@@ -13,10 +13,8 @@ export const Title = styled.h1`
 export const Information = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 12px;
   width: 600px;
-  font-size: 18px;
-  line-height: 28px;
 `;
 
 export const LineHeader = styled.span`
@@ -24,5 +22,6 @@ export const LineHeader = styled.span`
 `;
 
 export const Poster = styled.img`
-  width: 300px;
+  height: 680px;
+  width: auto;
 `;

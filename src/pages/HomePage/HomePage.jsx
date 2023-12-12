@@ -1,11 +1,14 @@
 import MoviesList from 'components/MoviesList/MoviesList';
 import { useEffect, useState } from 'react';
 import { fetchMoviesData } from 'services/tmdb-api';
-import { Error, PageTitle } from './HomePage.styled';
+import { Error, Hero, Info, PageTitle, Title } from './HomePage.styled';
+
+const IMAGE_PATH = 'https://image.tmdb.org/t/p/original/';
 
 const HomePage = () => {
   const [movies, setMovies] = useState([]);
   const [error, setError] = useState('');
+  const [heroImage, setHeroImage] = useState('');
 
   useEffect(() => {
     fetchMoviesData('trending')
@@ -18,6 +21,8 @@ const HomePage = () => {
         }
         setMovies(results);
         setError('');
+        const randomIndex = Math.floor(Math.random() * results.length + 0);
+        setHeroImage(`${IMAGE_PATH}${results[randomIndex]?.backdrop_path}`);
       })
       .catch(() =>
         setError(
@@ -26,9 +31,23 @@ const HomePage = () => {
       );
   }, []);
 
+  // const randomIndex = Math.floor(Math.random() * movies?.length + 0);
+  // const heroImage = `${IMAGE_PATH}${movies[randomIndex]?.backdrop_path}` ?? '';
+
   return (
     <div>
-      <PageTitle>Popular today:</PageTitle>
+      <Hero $heroImage={heroImage}>
+        <PageTitle>
+          Welcome to MovieMingle - Your Gateway to Cinematic Excellence!
+        </PageTitle>
+        <Info>
+          Discover the latest and trending films or explore a world of movies
+          tailored to your preferences. <br />
+          Whether you're in the mood for blockbuster hits or hidden gems, our
+          powerful search engine has you covered.
+        </Info>
+      </Hero>
+      <Title>Popular today:</Title>
       {error === '' ? <MoviesList movies={movies} /> : <Error>{error}</Error>}
     </div>
   );

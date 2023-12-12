@@ -2,14 +2,14 @@ import { Error } from 'pages/HomePage/HomePage.styled';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchMoviesData } from 'services/tmdb-api';
-import { Info, Item, List, Name, Photo, PhotoWrap } from './Cast.styled';
-
-const POSTERS_URL = 'https://image.tmdb.org/t/p/';
+import { CastList } from 'components/CastList/CastList';
+import { Button, Wrap } from './Cast.styled';
 
 const Cast = () => {
   const { movieId } = useParams();
   const [cast, setCast] = useState([]);
   const [error, setError] = useState('');
+  const [seeMore, setSeeMore] = useState(false);
 
   useEffect(() => {
     if (!movieId) {
@@ -33,33 +33,30 @@ const Cast = () => {
       );
   }, [movieId]);
 
+  const isCastLong = cast.length > 10;
+  const castToRender = isCastLong ? cast.filter((_, idx) => idx <= 9) : cast;
+  const castToSeeMore = isCastLong ? cast.filter((_, idx) => idx > 9) : [];
+
   return (
-    <div>
+    <Wrap>
       {error === '' ? (
-        <div>
-          <List>
-            {cast.map(actor => (
-              <Item key={actor.id}>
-                <PhotoWrap>
-                  <Photo
-                    src={
-                      actor.profile_path
-                        ? `${POSTERS_URL}w200${actor.profile_path}`
-                        : 'https://cdn.pixabay.com/photo/2013/05/30/18/21/cat-114782_1280.jpg'
-                    }
-                    alt={actor.name}
-                  />
-                </PhotoWrap>
-                <Name>{actor.name}</Name>
-                <Info>as {actor.character}</Info>
-              </Item>
-            ))}
-          </List>
-        </div>
+        <CastList castToRender={castToRender} />
       ) : (
         <Error>{error}</Error>
       )}
-    </div>
+
+      {isCastLong && !seeMore && (
+        <Button
+          onClick={() => {
+            setSeeMore(true);
+          }}
+        >
+          See more
+        </Button>
+      )}
+
+      {seeMore && <CastList castToRender={castToSeeMore} />}
+    </Wrap>
   );
 };
 

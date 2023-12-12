@@ -1,3 +1,4 @@
+import { YoutubeEmbed } from 'components/YouTubeEmbed/YouTubeEmbed';
 import {
   Container,
   Information,
@@ -14,13 +15,13 @@ const dateOptions = {
   day: 'numeric',
 };
 
-const MovieInfo = ({ movieData }) => {
+const MovieInfo = ({ movieData, movieTeaser }) => {
   return (
     <Container>
       <Poster
         src={
           movieData.poster_path
-            ? `${POSTERS_URL}w300${movieData.poster_path}`
+            ? `${POSTERS_URL}w500${movieData.poster_path}`
             : 'https://cdn.pixabay.com/photo/2014/01/21/16/01/backdrop-249158_1280.jpg'
         }
         alt={movieData.title}
@@ -46,14 +47,16 @@ const MovieInfo = ({ movieData }) => {
         </p>
         <p>
           <LineHeader>Genres:</LineHeader>{' '}
-          {movieData.genres.map(({ name }) => name).join(', ') || 'None'}
+          {movieData.genres.map(({ name }) => name).join(', ') || '-'}
         </p>
         <p>
-          <LineHeader>Promo:</LineHeader> {movieData.tagline || 'None'}
+          <LineHeader>Promo:</LineHeader> {movieData.tagline || '-'}
         </p>
         <p>
-          <LineHeader>Overview:</LineHeader> {movieData.overview || 'None'}
+          <LineHeader>Overview:</LineHeader> {movieData.overview || '-'}
         </p>
+
+        {movieTeaser && <YoutubeEmbed embedId={movieTeaser} />}
       </Information>
     </Container>
   );

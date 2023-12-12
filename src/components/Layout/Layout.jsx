@@ -1,22 +1,25 @@
-import Navigation from 'components/Navigation/Navigation';
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
-import { Container, Header } from './Layout.styled';
+import { Container, Main, Wrap } from './Layout.styled';
 import { Loader } from 'components/Loader/Loader';
+import { Header } from 'components/Header/Header';
+import { Footer } from 'components/Footer/Footer';
 
 const Layout = () => {
   return (
-    <div>
-      <Header>
-        <Navigation />
-      </Header>
+    <Wrap>
+      <Header />
 
-      <Suspense fallback={<Loader />}>
-        <Container>
-          <Outlet />
-        </Container>
-      </Suspense>
-    </div>
+      <Main>
+        <Suspense fallback={<Loader />}>
+          <Container>
+            <Outlet />
+          </Container>
+        </Suspense>
+      </Main>
+
+      <Footer />
+    </Wrap>
   );
 };
 

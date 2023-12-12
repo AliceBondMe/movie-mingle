@@ -6,35 +6,8 @@ import {
   SearchInput,
   ButtonImg,
 } from './Searchbar.styled';
-import { useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
 
-export const Searchbar = () => {
-  const [query, setQuery] = useState('');
-  const [searchParams, setSearchParams] = useSearchParams();
-  const [error, setError] = useState('');
-
-  const handleChange = ({ target: { value } }) => {
-    if (!value) setSearchParams({});
-    setQuery(value);
-  };
-
-  const handleSearch = () => {
-    if (query === '') {
-      setError('Please enter your search query');
-      return;
-    }
-    setSearchParams({ query: query });
-    setError('');
-  };
-
-  useEffect(() => {
-    const value = searchParams.get('query');
-    if (value) {
-      setQuery(value);
-    }
-  }, [searchParams]);
-
+export const Searchbar = ({ handleSearch, handleChange, query }) => {
   return (
     <>
       <Formik initialValues={{ searchQuery: '' }} onSubmit={handleSearch}>
@@ -55,8 +28,6 @@ export const Searchbar = () => {
           </SearchFormButton>
         </SearchForm>
       </Formik>
-
-      {error === '' ? '' : <div>{error}</div>}
     </>
   );
 };

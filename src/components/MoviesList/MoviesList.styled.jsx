@@ -16,10 +16,6 @@ export const CardLink = styled(Link)`
   align-items: center;
   padding: 8px;
   width: 224px;
-  transition: transform 300ms ease-in-out;
-  &:hover {
-    transform: scale(1.02);
-  }
 `;
 
 export const ImgWrap = styled.div`
@@ -29,12 +25,21 @@ export const ImgWrap = styled.div`
   height: 268px;
   display: flex;
   align-content: center;
+  overflow: hidden;
+  transition: all 300ms ease-in-out;
+  &:hover {
+    box-shadow: 0px 0px 10px 4px #113835;
+  }
 `;
 
 export const Image = styled.img`
   border-radius: 8px;
   width: 100%;
   object-fit: cover;
+  transition: transform 300ms ease-in-out;
+  &:hover {
+    transform: scale(1.1);
+  }
 `;
 
 export const Title = styled.h3`
