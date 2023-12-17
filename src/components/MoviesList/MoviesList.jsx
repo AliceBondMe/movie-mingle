@@ -32,7 +32,7 @@ const MoviesList = ({ movies }) => {
               <Image
                 src={
                   movie.poster_path
-                    ? `${POSTERS_URL}w200${movie.poster_path}`
+                    ? `${POSTERS_URL}w300${movie.poster_path}`
                     : 'https://cdn.pixabay.com/photo/2014/01/21/16/01/backdrop-249158_1280.jpg'
                 }
                 alt={movie.title}

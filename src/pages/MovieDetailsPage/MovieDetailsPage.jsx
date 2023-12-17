@@ -1,5 +1,6 @@
 import { Suspense, useEffect, useState } from 'react';
 import { Outlet, useLocation, useNavigate, useParams } from 'react-router-dom';
+import { MdOutlineKeyboardDoubleArrowLeft } from 'react-icons/md';
 
 import { fetchMoviesData } from 'services/tmdb-api';
 import { Loader } from 'components/Loader/Loader';
@@ -8,6 +9,7 @@ import { Error } from 'pages/HomePage/HomePage.styled';
 import {
   AdditionalNav,
   BackLink,
+  Container,
   NavLinkStyled,
   NavList,
 } from './MovieDetailsPage.styled';
@@ -49,15 +51,17 @@ const MovieDetailsPage = () => {
   }, [movieId, navigate]);
 
   return (
-    <>
-      <BackLink to={state?.from ?? '/'}>Go back</BackLink>
+    <Container>
+      <BackLink to={state?.from ?? '/'}>
+        <MdOutlineKeyboardDoubleArrowLeft />
+        Go back
+      </BackLink>
 
       {error === '' && movieData ? (
         <>
           <MovieInfo movieData={movieData} movieTeaser={video} />
 
           <AdditionalNav>
-            <h2>Additional information: </h2>
             <NavList>
               <li>
                 <NavLinkStyled to="cast" state={{ from: state?.from }}>
@@ -78,7 +82,7 @@ const MovieDetailsPage = () => {
       ) : (
         <Error>{error}</Error>
       )}
-    </>
+    </Container>
   );
 };
 

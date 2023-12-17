@@ -3,20 +3,15 @@ const { createGlobalStyle } = require('styled-components');
 export const GlobalStyle = createGlobalStyle`
     body {
         margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        font-family: -apple-system, BlinkMacSystemFont, 'Raleway', 'Segoe UI', 'Roboto', 'Oxygen',
             'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
             sans-serif;
         font-size: 18px;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        background-color: #e4f8f1d3;
-       color: #113835;
+        background-color: var(--basic-light);
+       color: var(--basic-dark);
     }
-
-    code {
-        font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-            monospace;
-        }
 
     p, h1, h2, h3 {
         margin: 0;

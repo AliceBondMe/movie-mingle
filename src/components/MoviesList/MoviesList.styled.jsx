@@ -6,7 +6,7 @@ export const List = styled.ul`
   flex-wrap: wrap;
   justify-content: center;
   gap: 12px;
-  color: #113835;
+  color: var(--basic-dark);
 `;
 
 export const CardLink = styled(Link)`
@@ -19,14 +19,14 @@ export const CardLink = styled(Link)`
 `;
 
 export const ImgWrap = styled.div`
-  margin: 0 auto;
+  margin: 0 auto 8px auto;
   border-radius: 8px;
   width: 200px;
   height: 268px;
   display: flex;
   align-content: center;
   overflow: hidden;
-  transition: all 300ms ease-in-out;
+  transition: all var(--basic-transition);
   &:hover {
     box-shadow: 0px 0px 10px 4px #113835;
   }
@@ -36,7 +36,7 @@ export const Image = styled.img`
   border-radius: 8px;
   width: 100%;
   object-fit: cover;
-  transition: transform 300ms ease-in-out;
+  transition: transform var(--basic-transition);
   &:hover {
     transform: scale(1.1);
   }
@@ -56,9 +56,9 @@ export const Rating = styled.div`
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  border: 2px solid #ffffff;
+  border: 2px solid var(--basic-white);
   background-color: ${({ $color }) => $color};
-  color: #ffffff;
+  color: var(--basic-white);
   box-shadow: rgba(193, 193, 193, 0.766) 0px 2px 4px 0px,
     rgba(225, 225, 225, 0.682) 0px 2px 16px 0px;
 `;

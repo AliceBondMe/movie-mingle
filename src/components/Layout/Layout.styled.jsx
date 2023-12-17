@@ -5,9 +5,7 @@ export const Main = styled.main`
   padding-bottom: 24px;
 `;
 
-export const Container = styled.div`
-  padding: 24px 24px;
-`;
+export const Container = styled.div``;
 
 export const Wrap = styled.div`
   display: flex;

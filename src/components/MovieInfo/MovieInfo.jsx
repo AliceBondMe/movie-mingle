@@ -30,30 +30,30 @@ const MovieInfo = ({ movieData, movieTeaser }) => {
         <Title>{`${movieData.title} (${
           movieData.release_date
             ? new Date(movieData.release_date).getFullYear()
-            : 'year unknown'
+            : ''
         })`}</Title>
         <p>
-          <LineHeader>Release date:</LineHeader>{' '}
+          <LineHeader>Release date</LineHeader>{' '}
           {new Date(movieData.release_date).toLocaleDateString(
             'en-US',
             dateOptions
           )}
         </p>
         <p>
-          <LineHeader>Rating: </LineHeader>
+          <LineHeader>Rating</LineHeader>
           {movieData.vote_average === 0
             ? 'Not rated'
             : `${Math.round(movieData.vote_average * 10)}%`}
         </p>
         <p>
-          <LineHeader>Genres:</LineHeader>{' '}
+          <LineHeader>Genres</LineHeader>{' '}
           {movieData.genres.map(({ name }) => name).join(', ') || '-'}
         </p>
         <p>
-          <LineHeader>Promo:</LineHeader> {movieData.tagline || '-'}
+          <LineHeader>Promo</LineHeader> {movieData.tagline || '-'}
         </p>
         <p>
-          <LineHeader>Overview:</LineHeader> {movieData.overview || '-'}
+          <LineHeader>Overview</LineHeader> {movieData.overview || '-'}
         </p>
 
         {movieTeaser && <YoutubeEmbed embedId={movieTeaser} />}

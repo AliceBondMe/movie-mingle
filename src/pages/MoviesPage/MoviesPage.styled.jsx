@@ -5,6 +5,7 @@ export const Wrap = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 24px;
+  padding: 24px;
 `;
 
 export const Info = styled.h3`

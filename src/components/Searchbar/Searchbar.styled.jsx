@@ -8,8 +8,8 @@ export const SearchForm = styled(Form)`
   align-items: center;
   width: 100%;
   max-width: 600px;
-  background-color: #fff;
-  border: 1px solid #113835;
+  background-color: var(--basic-white);
+  border: 1px solid var(--basic-dark);
   border-radius: 3px;
   overflow: hidden;
 `;
@@ -20,10 +20,10 @@ export const SearchFormButton = styled.button`
   height: 48px;
   border: 0;
   opacity: 0.6;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity var(--basic-transition);
   cursor: pointer;
   outline: none;
-  background-color: #e4f8f1d3;
+  background-color: var(--basic-light);
 
   &:hover {
     opacity: 1;
@@ -38,7 +38,7 @@ export const SearchFormButton = styled.button`
 export const ButtonImg = styled(BsSearch)`
   width: 36px;
   height: 36px;
-  color: #0b615a;
+  color: var(--additional);
 `;
 
 export const ButtonLabel = styled.span`

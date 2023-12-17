@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchMoviesData } from 'services/tmdb-api';
 import { Author, Item, Url } from './Reviews.styled';
+import { IoPersonCircleSharp } from 'react-icons/io5';
 
 const Reviews = () => {
   const { movieId } = useParams();
@@ -36,7 +37,10 @@ const Reviews = () => {
           <ul>
             {reviews.map(review => (
               <Item key={review.id}>
-                <Author>Author: {review.author}</Author>
+                <Author>
+                  <IoPersonCircleSharp size="28" />
+                  {review.author}
+                </Author>
                 <p>
                   {review.content.length < 500
                     ? review.content

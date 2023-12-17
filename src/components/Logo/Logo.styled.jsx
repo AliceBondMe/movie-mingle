@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 export const Wrap = styled(Link)`
   display: flex;
-  align-items: center;
   margin-right: 28px;
   font-weight: bold;
 

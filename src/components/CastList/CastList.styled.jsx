@@ -17,10 +17,16 @@ export const Item = styled.li`
 `;
 
 export const PhotoWrap = styled.div`
+  margin-bottom: 4px;
   width: 140px;
-  height: 170px;
+  height: 140px;
   display: flex;
   align-content: center;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid var(--accent);
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 `;
 
 export const Photo = styled.img`
