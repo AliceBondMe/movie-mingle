@@ -5,8 +5,7 @@ import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { fetchMoviesData } from 'services/tmdb-api';
 import { Info, Wrap } from './MoviesPage.styled';
-import { Pages } from 'components/Pages/Pages';
-import { createPagesButtons } from 'services/createPagesButtons';
+import { Pagination } from '@mui/material';
 
 const MoviesPage = () => {
   const [query, setQuery] = useState('');
@@ -15,7 +14,7 @@ const MoviesPage = () => {
   const [error, setError] = useState('');
   const [pages, setPages] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
-  const [pagesToShow, setPagesToShow] = useState([]);
+  const [pagesToShow, setPagesToShow] = useState(0);
 
   const handleChange = ({ target: { value } }) => {
     if (!value) setSearchParams({});
@@ -60,8 +59,7 @@ const MoviesPage = () => {
         setMovies(results);
         setPages(total_pages);
         setError('');
-        const pagesButtonsArray = createPagesButtons(total_pages, urlPage);
-        setPagesToShow(pagesButtonsArray);
+        setPagesToShow(total_pages);
       })
       .catch(() => {
         setError(
@@ -90,10 +88,12 @@ const MoviesPage = () => {
       />
       {error === '' ? <MoviesList movies={movies} /> : <Error>{error}</Error>}
       {pages > 1 && (
-        <Pages
-          pagesToShow={pagesToShow}
-          handlePageClick={handlePageClick}
-          currentPage={currentPage}
+        <Pagination
+          count={pagesToShow}
+          page={currentPage}
+          onChange={handlePageClick}
+          hidePrevButton
+          hideNextButton
         />
       )}
     </Wrap>

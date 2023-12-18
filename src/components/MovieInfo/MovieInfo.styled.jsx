@@ -4,7 +4,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   gap: 40px;
-  margin-bottom: 24px;
+  padding: 24px;
 `;
 
 export const Title = styled.h1`
@@ -37,7 +37,7 @@ export const LineHeader = styled.span`
 `;
 
 export const Poster = styled.img`
-  height: 680px;
+  height: 600px;
   width: auto;
   border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;

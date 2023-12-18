@@ -1,4 +1,3 @@
-import { YoutubeEmbed } from 'components/YouTubeEmbed/YouTubeEmbed';
 import {
   Container,
   Information,
@@ -15,7 +14,7 @@ const dateOptions = {
   day: 'numeric',
 };
 
-const MovieInfo = ({ movieData, movieTeaser }) => {
+const MovieInfo = ({ movieData }) => {
   return (
     <Container>
       <Poster
@@ -55,8 +54,6 @@ const MovieInfo = ({ movieData, movieTeaser }) => {
         <p>
           <LineHeader>Overview</LineHeader> {movieData.overview || '-'}
         </p>
-
-        {movieTeaser && <YoutubeEmbed embedId={movieTeaser} />}
       </Information>
     </Container>
   );

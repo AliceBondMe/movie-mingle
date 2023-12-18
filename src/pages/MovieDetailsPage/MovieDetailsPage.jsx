@@ -17,7 +17,6 @@ import {
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
   const [movieData, setMovieData] = useState(null);
-  const [video, setVideo] = useState(null);
   const [error, setError] = useState('');
   const { state } = useLocation();
   const navigate = useNavigate();
@@ -36,18 +35,6 @@ const MovieDetailsPage = () => {
           navigate('/');
         }, 2000);
       });
-    fetchMoviesData('searchVideos', Number(movieId))
-      .then(({ results }) => {
-        const teaserId = results.findIndex(
-          result => result.type === 'Teaser' || result.type === 'Trailer'
-        );
-        if (teaserId !== -1) {
-          setVideo(results[teaserId].key);
-        }
-      })
-      .catch(err => {
-        console.log(err);
-      });
   }, [movieId, navigate]);
 
   return (
@@ -59,10 +46,20 @@ const MovieDetailsPage = () => {
 
       {error === '' && movieData ? (
         <>
-          <MovieInfo movieData={movieData} movieTeaser={video} />
+          <MovieInfo movieData={movieData} />
 
           <AdditionalNav>
             <NavList>
+              <li>
+                <NavLinkStyled to="trailer" state={{ from: state?.from }}>
+                  Trailer
+                </NavLinkStyled>
+              </li>
+              <li>
+                <NavLinkStyled to="photos" state={{ from: state?.from }}>
+                  Photos
+                </NavLinkStyled>
+              </li>
               <li>
                 <NavLinkStyled to="cast" state={{ from: state?.from }}>
                   Cast

@@ -11,7 +11,7 @@ export async function fetchMoviesData(type, id, query, page) {
     searchVideos: `/movie/${id}/videos`,
     cast: `/movie/${id}/credits`,
     reviews: `/movie/${id}/reviews`,
-    image: `movie/${id}/images`,
+    image: `/movie/${id}/images`,
   };
 
   const searchParams = new URLSearchParams({

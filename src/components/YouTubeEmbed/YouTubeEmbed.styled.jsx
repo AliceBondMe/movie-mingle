@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Video = styled.div`
   margin-top: 20px;
   overflow: hidden;
-  padding-bottom: 56.25%;
+  padding-bottom: 50%;
   position: relative;
   height: 0;
 `;
