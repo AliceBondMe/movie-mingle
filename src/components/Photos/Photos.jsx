@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { fetchMoviesData } from 'services/tmdb-api';
 import { Container, ImagesItem, ImagesList } from './Photos.styled';
 
-const IMAGE_PATH = 'https://image.tmdb.org/t/p/original/';
+const IMAGE_PATH = 'https://image.tmdb.org/t/p/w300/';
 
 const Photos = () => {
   const { movieId } = useParams();
