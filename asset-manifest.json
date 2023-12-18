@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/movie-mingle/static/css/main.1ae39274.css",
-    "main.js": "/movie-mingle/static/js/main.4f59b7ea.js",
+    "main.js": "/movie-mingle/static/js/main.84198f74.js",
     "static/js/680.8eea457a.chunk.js": "/movie-mingle/static/js/680.8eea457a.chunk.js",
     "static/js/722.36afc870.chunk.js": "/movie-mingle/static/js/722.36afc870.chunk.js",
     "static/js/517.04ef7747.chunk.js": "/movie-mingle/static/js/517.04ef7747.chunk.js",
     "static/js/794.55a4b43f.chunk.js": "/movie-mingle/static/js/794.55a4b43f.chunk.js",
     "static/js/206.ed6f4077.chunk.js": "/movie-mingle/static/js/206.ed6f4077.chunk.js",
-    "static/js/900.d98842b5.chunk.js": "/movie-mingle/static/js/900.d98842b5.chunk.js",
+    "static/js/900.cbddefcb.chunk.js": "/movie-mingle/static/js/900.cbddefcb.chunk.js",
     "static/js/796.5fc3407c.chunk.js": "/movie-mingle/static/js/796.5fc3407c.chunk.js",
     "static/js/387.efe83ba1.chunk.js": "/movie-mingle/static/js/387.efe83ba1.chunk.js",
     "static/js/785.2b540c26.chunk.js": "/movie-mingle/static/js/785.2b540c26.chunk.js",
@@ -19,13 +19,13 @@
     "static/media/Raleway-Bold.ttf": "/movie-mingle/static/media/Raleway-Bold.757abe402eb07a0ab739.ttf",
     "index.html": "/movie-mingle/index.html",
     "main.1ae39274.css.map": "/movie-mingle/static/css/main.1ae39274.css.map",
-    "main.4f59b7ea.js.map": "/movie-mingle/static/js/main.4f59b7ea.js.map",
+    "main.84198f74.js.map": "/movie-mingle/static/js/main.84198f74.js.map",
     "680.8eea457a.chunk.js.map": "/movie-mingle/static/js/680.8eea457a.chunk.js.map",
     "722.36afc870.chunk.js.map": "/movie-mingle/static/js/722.36afc870.chunk.js.map",
     "517.04ef7747.chunk.js.map": "/movie-mingle/static/js/517.04ef7747.chunk.js.map",
     "794.55a4b43f.chunk.js.map": "/movie-mingle/static/js/794.55a4b43f.chunk.js.map",
     "206.ed6f4077.chunk.js.map": "/movie-mingle/static/js/206.ed6f4077.chunk.js.map",
-    "900.d98842b5.chunk.js.map": "/movie-mingle/static/js/900.d98842b5.chunk.js.map",
+    "900.cbddefcb.chunk.js.map": "/movie-mingle/static/js/900.cbddefcb.chunk.js.map",
     "796.5fc3407c.chunk.js.map": "/movie-mingle/static/js/796.5fc3407c.chunk.js.map",
     "387.efe83ba1.chunk.js.map": "/movie-mingle/static/js/387.efe83ba1.chunk.js.map",
     "785.2b540c26.chunk.js.map": "/movie-mingle/static/js/785.2b540c26.chunk.js.map",
@@ -36,6 +36,6 @@
   },
   "entrypoints": [
     "static/css/main.1ae39274.css",
-    "static/js/main.4f59b7ea.js"
+    "static/js/main.84198f74.js"
   ]
 }
