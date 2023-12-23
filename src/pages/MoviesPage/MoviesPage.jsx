@@ -94,6 +94,19 @@ const MoviesPage = () => {
           onChange={handlePageClick}
           hidePrevButton
           hideNextButton
+          color={'success'}
+          sx={{
+            '& .MuiPaginationItem-root': {
+              color: '#ffffff',
+              backgroundColor: '#266861',
+              fontFamily: 'inherit',
+            },
+            '& .MuiPaginationItem-ellipsis': {
+              backgroundColor: 'transparent',
+              color: 'inherit',
+              fontSize: '24px',
+            },
+          }}
         />
       )}
     </Wrap>

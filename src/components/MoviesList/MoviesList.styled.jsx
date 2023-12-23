@@ -1,3 +1,4 @@
+import { fadeIn } from 'GlobalStyle';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -6,7 +7,7 @@ export const List = styled.ul`
   flex-wrap: wrap;
   justify-content: center;
   gap: 12px;
-  color: var(--basic-dark);
+  animation: ${fadeIn} 700ms ease-in-out;
 `;
 
 export const CardLink = styled(Link)`
@@ -28,7 +29,7 @@ export const ImgWrap = styled.div`
   overflow: hidden;
   transition: all var(--basic-transition);
   &:hover {
-    box-shadow: 0px 0px 10px 4px #113835;
+    box-shadow: 0px 0px 16px 4px var(--basic-dark);
   }
 `;
 
