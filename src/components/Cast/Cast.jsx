@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { fetchMoviesData } from 'services/tmdb-api';
 import { CastList } from 'components/CastList/CastList';
 import { Button, Wrap } from './Cast.styled';
+import { scrollToAdditionalMenu } from 'helpers/scrollToAdditionalMenu';
 
 const Cast = () => {
   const { movieId } = useParams();
@@ -19,7 +20,7 @@ const Cast = () => {
       .then(({ cast }) => {
         if (!cast.length) {
           setError(
-            'We are sorry, but something went wrong :( Please, try again later'
+            'We are sorry, but there is no information about cast yet :('
           );
           return;
         }
@@ -30,7 +31,10 @@ const Cast = () => {
         setError(
           'We are sorry, but something went wrong :( Please, try again later'
         )
-      );
+      )
+      .finally(() => {
+        scrollToAdditionalMenu();
+      });
   }, [movieId]);
 
   const isCastLong = cast.length > 10;

@@ -1,10 +1,14 @@
+import { useEffect, useState } from 'react';
 import {
+  Button,
   Container,
   Information,
   LineHeader,
   Paragraph,
   Poster,
   Title,
+  VideoMinus,
+  VideoPlus,
 } from './MovieInfo.styled';
 
 const POSTERS_URL = 'https://image.tmdb.org/t/p/';
@@ -15,7 +19,31 @@ const dateOptions = {
   day: 'numeric',
 };
 
+const MOVIES_KEY = 'moviesWatchlist';
+
 const MovieInfo = ({ movieData }) => {
+  const [moviesToWatch, setMoviesToWatch] = useState(
+    JSON.parse(localStorage.getItem(MOVIES_KEY)) || []
+  );
+  const [isMovieSaved, setMovieSaved] = useState(false);
+
+  useEffect(() => {
+    const isSaved = moviesToWatch.find(({ id }) => id === movieData.id);
+    isSaved ? setMovieSaved(true) : setMovieSaved(false);
+  }, [movieData.id, moviesToWatch]);
+
+  useEffect(() => {
+    localStorage.setItem(MOVIES_KEY, JSON.stringify(moviesToWatch));
+  }, [moviesToWatch]);
+
+  const addMovieToWatchlist = () => {
+    setMoviesToWatch(prev => [...prev, movieData]);
+  };
+
+  const removeMovieFromWatchlist = () => {
+    setMoviesToWatch(prev => prev.filter(({ id }) => id !== movieData.id));
+  };
+
   return (
     <Container>
       <Poster
@@ -32,6 +60,24 @@ const MovieInfo = ({ movieData }) => {
             ? new Date(movieData.release_date).getFullYear()
             : ''
         })`}</Title>
+
+        {isMovieSaved ? (
+          <Button
+            type="button"
+            aria-label="remove from watchlist"
+            onClick={removeMovieFromWatchlist}
+          >
+            <VideoMinus />
+          </Button>
+        ) : (
+          <Button
+            type="button"
+            aria-label="add to watchlist"
+            onClick={addMovieToWatchlist}
+          >
+            <VideoPlus />
+          </Button>
+        )}
 
         {movieData.title !== movieData.original_title && (
           <Paragraph>

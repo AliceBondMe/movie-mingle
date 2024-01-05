@@ -2,8 +2,9 @@ import { Error } from 'pages/HomePage/HomePage.styled';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchMoviesData } from 'services/tmdb-api';
-import { Author, Item, Url } from './Reviews.styled';
+import { Author, Container, Item, Url } from './Reviews.styled';
 import { IoPersonCircleSharp } from 'react-icons/io5';
+import { scrollToAdditionalMenu } from 'helpers/scrollToAdditionalMenu';
 
 const Reviews = () => {
   const { movieId } = useParams();
@@ -17,7 +18,7 @@ const Reviews = () => {
     fetchMoviesData('reviews', movieId)
       .then(({ results }) => {
         if (!results.length) {
-          setError('There are no reviews yet :(');
+          setError('We are sorry, but there are no reviews yet :(');
           return;
         }
         setReviews(results);
@@ -27,11 +28,14 @@ const Reviews = () => {
         setError(
           'We are sorry, but something went wrong :( Please, try again later'
         )
-      );
+      )
+      .finally(() => {
+        scrollToAdditionalMenu();
+      });
   }, [movieId]);
 
   return (
-    <div>
+    <Container>
       {error === '' ? (
         <div>
           <ul>
@@ -58,7 +62,7 @@ const Reviews = () => {
       ) : (
         <Error>{error}</Error>
       )}
-    </div>
+    </Container>
   );
 };
 

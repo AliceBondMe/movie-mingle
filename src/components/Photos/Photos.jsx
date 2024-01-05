@@ -4,6 +4,8 @@ import { fetchMoviesData } from 'services/tmdb-api';
 import { Container, ImagesItem, ImagesList } from './Photos.styled';
 import { ImageModal } from 'components/ImageModal/ImageModal';
 import { Image } from 'components/ImageModal/ImageModal.styled';
+import { scrollToAdditionalMenu } from 'helpers/scrollToAdditionalMenu';
+import { Error } from 'pages/HomePage/HomePage.styled';
 
 const SMALL_IMAGE_PATH = 'https://image.tmdb.org/t/p/w300';
 
@@ -21,7 +23,7 @@ const Photos = () => {
     fetchMoviesData('image', movieId)
       .then(({ backdrops }) => {
         if (!backdrops.length) {
-          setError('We are sorry, but there are no photos yet');
+          setError('We are sorry, but there are no photos yet :(');
           return;
         }
         setImages(backdrops.map(item => item.file_path));
@@ -31,7 +33,10 @@ const Photos = () => {
         setError(
           'We are sorry, but something went wrong :( Please, try again later'
         )
-      );
+      )
+      .finally(() => {
+        scrollToAdditionalMenu();
+      });
   }, [movieId]);
 
   const handleClick = e => {
@@ -59,7 +64,7 @@ const Photos = () => {
           ))}
         </ImagesList>
       ) : (
-        <p>{error}</p>
+        <Error>{error}</Error>
       )}
       {isModalOpen && (
         <ImageModal currentImage={currentImage} closeModal={closeModal} />

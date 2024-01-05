@@ -8,6 +8,9 @@ const MoviesPage = lazy(() => import('../pages/MoviesPage/MoviesPage'));
 const MovieDetailsPage = lazy(() =>
   import('../pages/MovieDetailsPage/MovieDetailsPage')
 );
+const WatchlistPage = lazy(() =>
+  import('../pages/WatchlistPage/WatchlistPage')
+);
 const NotFoundPage = lazy(() => import('../pages/NotFoundPage/NotFoundPage'));
 const Trailer = lazy(() => import('./Trailer/Trailer'));
 const Photos = lazy(() => import('./Photos/Photos'));
@@ -39,6 +42,7 @@ export const App = () => {
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
           <Route path="/movies" element={<MoviesPage />} />
+          <Route path="/watchlist" element={<WatchlistPage />} />
           <Route path="/movies/:movieId" element={<MovieDetailsPage />}>
             <Route path="/movies/:movieId/trailer" element={<Trailer />} />
             <Route path="/movies/:movieId/photos" element={<Photos />} />

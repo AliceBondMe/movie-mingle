@@ -23,7 +23,7 @@ export const Title = styled.h2`
 `;
 
 export const Error = styled.p`
-  font-size: 24px;
+  font-size: 20px;
   margin: 24px 0;
 `;
 

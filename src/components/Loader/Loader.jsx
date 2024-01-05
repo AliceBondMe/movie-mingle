@@ -14,8 +14,8 @@ export const Loader = () => {
           margin: '0 auto',
         }}
         wrapperClass="MagnifyingGlass-wrapper"
-        glassColor="#e4f8f1d3"
-        color="#113835"
+        glassColor="transparent"
+        color="#266861"
       />
     </Wrapper>
   );

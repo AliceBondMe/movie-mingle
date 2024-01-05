@@ -4,6 +4,7 @@ import { BsSearch } from 'react-icons/bs';
 
 export const SearchForm = styled(Form)`
   margin: 0 auto 24px auto;
+  padding-left: 12px;
   display: flex;
   align-items: center;
   width: 100%;
@@ -15,6 +16,7 @@ export const SearchForm = styled(Form)`
 `;
 
 export const SearchFormButton = styled.button`
+  margin-left: 12px;
   display: inline-block;
   width: 48px;
   height: 48px;
@@ -38,7 +40,7 @@ export const SearchFormButton = styled.button`
 export const ButtonImg = styled(BsSearch)`
   width: 36px;
   height: 36px;
-  color: var(--additional);
+  color: var(--basic-dark);
 `;
 
 export const ButtonLabel = styled.span`

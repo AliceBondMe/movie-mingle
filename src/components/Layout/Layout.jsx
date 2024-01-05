@@ -4,6 +4,7 @@ import { Container, Main, Wrap } from './Layout.styled';
 import { Loader } from 'components/Loader/Loader';
 import { Header } from 'components/Header/Header';
 import { Footer } from 'components/Footer/Footer';
+import { ScrollUpButton } from 'components/ScrollUpButton/ScrollUpButton';
 
 const Layout = () => {
   return (
@@ -16,6 +17,7 @@ const Layout = () => {
             <Outlet />
           </Container>
         </Suspense>
+        <ScrollUpButton />
       </Main>
 
       <Footer />

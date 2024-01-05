@@ -48,7 +48,7 @@ const MovieDetailsPage = () => {
         <>
           <MovieInfo movieData={movieData} />
 
-          <AdditionalNav>
+          <AdditionalNav name="myScrollToElement">
             <NavList>
               <li>
                 <NavLinkStyled to="trailer" state={{ from: state?.from }}>
