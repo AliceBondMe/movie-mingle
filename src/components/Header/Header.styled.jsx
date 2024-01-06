@@ -1,3 +1,5 @@
+import { IoMenu } from 'react-icons/io5';
+import { IoMdClose } from 'react-icons/io';
 import styled from 'styled-components';
 
 export const HeaderStyled = styled.header`
@@ -33,4 +35,26 @@ export const ThemeButton = styled.button`
   background-color: inherit;
   color: inherit;
   cursor: pointer;
+`;
+
+export const MenuButton = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  color: var(--basic-white);
+  border: none;
+  cursor: pointer;
+`;
+
+export const MenuIcon = styled(IoMenu)`
+  width: 100%;
+  height: 100%;
+`;
+
+export const CloseIcon = styled(IoMdClose)`
+  width: 100%;
+  height: 100%;
 `;

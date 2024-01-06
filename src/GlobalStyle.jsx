@@ -3,8 +3,7 @@ import { createGlobalStyle, keyframes } from 'styled-components';
 export const GlobalStyle = createGlobalStyle`
 :root {
   --basic-dark: ${({ $theme }) => ($theme === 'dark' ? '#fafafa' : '#0e2f2d')};
-  --basic-light: ${({ $theme }) =>
-    $theme === 'dark' ? '#0e2f2d' : '#e4f8f1d3'};
+  --basic-light: ${({ $theme }) => ($theme === 'dark' ? '#0e2f2d' : '#e4f8f1')};
   --bg-gradient: ${({ $theme }) =>
     $theme === 'dark' ? '#20635d' : '#fafcfbd2'};
   --accent: ${({ $theme }) => ($theme === 'dark' ? '#094a44' : '#266861')};

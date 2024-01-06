@@ -1,11 +1,17 @@
 import { LinkStyled, Nav } from './Navigation.styled';
 
-const Navigation = () => {
+const Navigation = ({ closeMobileMenu }) => {
   return (
     <Nav>
-      <LinkStyled to="/">Home</LinkStyled>
-      <LinkStyled to="movies">Movies</LinkStyled>
-      <LinkStyled to="watchlist">Watchlist</LinkStyled>
+      <LinkStyled to="/" onClick={closeMobileMenu}>
+        Home
+      </LinkStyled>
+      <LinkStyled to="movies" onClick={closeMobileMenu}>
+        Movies
+      </LinkStyled>
+      <LinkStyled to="watchlist" onClick={closeMobileMenu}>
+        Watchlist
+      </LinkStyled>
     </Nav>
   );
 };

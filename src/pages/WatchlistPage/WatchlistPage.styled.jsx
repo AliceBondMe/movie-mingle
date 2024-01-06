@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Wrap = styled.div`
@@ -11,4 +12,8 @@ export const Wrap = styled.div`
 export const Info = styled.h3`
   width: 800px;
   text-align: center;
+`;
+
+export const HomeLink = styled(Link)`
+  text-decoration: underline;
 `;

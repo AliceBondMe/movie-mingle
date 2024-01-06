@@ -1,8 +1,11 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-export const CardLink = styled(Link)`
+export const Item = styled.li`
   position: relative;
+`;
+
+export const CardLink = styled(Link)`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,8 +43,8 @@ export const Title = styled.h3`
 
 export const Rating = styled.div`
   position: absolute;
-  top: 16px;
-  right: 28px;
+  top: 232px;
+  left: 12px;
   display: flex;
   justify-content: center;
   align-items: center;

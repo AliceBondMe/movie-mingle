@@ -1,6 +1,14 @@
 import { useLocation } from 'react-router-dom';
-import { CardLink, Image, ImgWrap, Rating, Title } from './MovieItem.styled';
+import {
+  CardLink,
+  Image,
+  ImgWrap,
+  Item,
+  Rating,
+  Title,
+} from './MovieItem.styled';
 import { ratingColorDetect } from 'helpers/ratingColorDetect';
+import { WatchlistButton } from 'components/WatchlistButton/WatchlistButton';
 
 export const MovieItem = ({ movie }) => {
   const location = useLocation();
@@ -13,7 +21,7 @@ export const MovieItem = ({ movie }) => {
   };
 
   return (
-    <li>
+    <Item>
       <CardLink
         to={
           location.pathname === '/' || location.pathname === '/watchlist'
@@ -47,6 +55,7 @@ export const MovieItem = ({ movie }) => {
             : `${Math.round(movie.vote_average * 10)}%`}
         </Rating>
       </CardLink>
-    </li>
+      <WatchlistButton movieData={movie} />
+    </Item>
   );
 };

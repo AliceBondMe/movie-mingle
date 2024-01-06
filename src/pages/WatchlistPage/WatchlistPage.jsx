@@ -1,20 +1,26 @@
 import MoviesList from 'components/MoviesList/MoviesList';
-import { useState } from 'react';
-import { Info, Wrap } from './WatchlistPage.styled';
-
-const MOVIES_KEY = 'moviesWatchlist';
+import { HomeLink, Info, Wrap } from './WatchlistPage.styled';
+import { useContext } from 'react';
+import { WatchlistContext } from 'components/App';
 
 const WatchlistPage = () => {
-  const [moviesToWatch] = useState(
-    JSON.parse(localStorage.getItem(MOVIES_KEY)) || []
-  );
+  const { watchlist } = useContext(WatchlistContext);
+
   return (
     <Wrap>
-      <Info>
-        Ready for a movie night? <br />
-        Explore your watchlist and find the perfect film!
-      </Info>
-      <MoviesList movies={moviesToWatch} />
+      {watchlist.length === 0 ? (
+        <Info>
+          Your watchlist is still empty :( <br />
+          Why don't you go to our <HomeLink to="/">Home</HomeLink> page to find
+          some popular movies?
+        </Info>
+      ) : (
+        <Info>
+          Ready for a movie night? <br />
+          Explore your watchlist and find the perfect film!
+        </Info>
+      )}
+      <MoviesList movies={watchlist} />
     </Wrap>
   );
 };
