@@ -16,11 +16,11 @@ import { MobileMenu } from 'components/MobileMenu/MobileMenu';
 
 export const Header = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 640);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 640);
   const [isMobileMenulOpen, setIsMobileMenulOpen] = useState(false);
 
   const handleResize = () => {
-    window.innerWidth <= 640 ? setIsMobile(true) : setIsMobile(false);
+    window.innerWidth < 640 ? setIsMobile(true) : setIsMobile(false);
   };
 
   useEffect(() => {
@@ -46,7 +46,7 @@ export const Header = () => {
   return (
     <HeaderStyled>
       <NavBlock>
-        <Logo />
+        <Logo closeMobileMenu={closeMobileMenu} />
         {!isMobile && <Navigation />}
       </NavBlock>
 

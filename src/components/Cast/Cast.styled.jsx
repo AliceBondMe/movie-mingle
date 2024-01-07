@@ -10,7 +10,7 @@ export const Button = styled.button`
   width: 120px;
   font-family: inherit;
   font-size: inherit;
-  line-height: 32px;
+  padding: 4px;
   color: var(--basic-white);
   background-color: var(--accent);
   border: none;
@@ -19,8 +19,12 @@ export const Button = styled.button`
   transition: all 300ms ease-in-out;
 
   &:hover {
-    background-color: var(--basic-light);
-    color: var(--accent);
+    background-color: transparent;
+    color: inherit;
     outline: 1px solid var(--accent);
+  }
+
+  @media screen and (max-width: 639px) {
+    font-size: 14px;
   }
 `;

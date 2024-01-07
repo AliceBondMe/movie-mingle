@@ -19,4 +19,8 @@ export const Wrap = styled(Link)`
       transform: translateY(-4px);
     }
   }
+
+  @media screen and (max-width: 639px) {
+    font-size: 16px;
+  }
 `;

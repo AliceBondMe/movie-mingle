@@ -1,5 +1,10 @@
 import { createPortal } from 'react-dom';
-import { Backdrop, ModalContainer } from './ImageModal.styled';
+import {
+  Backdrop,
+  CloseBtn,
+  CloseIcon,
+  ModalContainer,
+} from './ImageModal.styled';
 import { useEffect } from 'react';
 
 const BIG_IMAGE_PATH = 'https://image.tmdb.org/t/p/original';
@@ -28,6 +33,13 @@ export const ImageModal = ({ currentImage, closeModal }) => {
   return createPortal(
     <Backdrop onClick={handleBackdropClose}>
       <ModalContainer>
+        <CloseBtn
+          type="button"
+          aria-label="close image modal window"
+          onClick={closeModal}
+        >
+          <CloseIcon />
+        </CloseBtn>
         <img src={`${BIG_IMAGE_PATH}${currentImage}`} alt="movie-scene" />
       </ModalContainer>
     </Backdrop>,

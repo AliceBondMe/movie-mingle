@@ -18,6 +18,10 @@ export const Button = styled.button`
   cursor: pointer;
 `;
 
+export const RemoveButton = styled(Button)`
+  background-color: var(--basic-gray);
+`;
+
 export const VideoPlus = styled(TbVideoPlus)`
   width: 100%;
   height: 100%;

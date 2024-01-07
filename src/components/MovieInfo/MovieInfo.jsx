@@ -3,10 +3,12 @@ import {
   Container,
   Information,
   LineHeader,
+  NoPoster,
   Paragraph,
   Poster,
   Title,
 } from './MovieInfo.styled';
+import { useEffect, useState } from 'react';
 
 const POSTERS_URL = 'https://image.tmdb.org/t/p/';
 
@@ -17,16 +19,35 @@ const dateOptions = {
 };
 
 const MovieInfo = ({ movieData }) => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 640);
+
+  const handleResize = () => {
+    window.innerWidth < 640 ? setIsMobile(true) : setIsMobile(false);
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <Container>
-      <Poster
-        src={
-          movieData.poster_path
-            ? `${POSTERS_URL}w500${movieData.poster_path}`
-            : 'https://cdn.pixabay.com/photo/2014/01/21/16/01/backdrop-249158_1280.jpg'
-        }
-        alt={movieData.title}
-      />
+      {isMobile && !movieData.poster_path ? (
+        <NoPoster>We have no poster yet :(</NoPoster>
+      ) : (
+        <Poster
+          src={
+            movieData.poster_path
+              ? `${POSTERS_URL}w500${movieData.poster_path}`
+              : 'https://cdn.pixabay.com/photo/2014/01/21/16/01/backdrop-249158_1280.jpg'
+          }
+          alt={movieData.title}
+        />
+      )}
+
       <Information>
         <Title>{`${movieData.title} (${
           movieData.release_date

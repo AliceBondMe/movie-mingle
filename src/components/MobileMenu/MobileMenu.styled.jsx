@@ -8,9 +8,8 @@ export const MenuContainer = styled.div`
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   gap: 36px;
-  padding: 60px 12px;
+  padding-top: 160px;
   background-color: var(--basic-light);
 `;

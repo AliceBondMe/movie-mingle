@@ -7,13 +7,15 @@ export const Container = styled.div`
 `;
 
 export const ImagesList = styled.ul`
-  display: grid;
-  grid-template-columns: repeat(5, 240px);
+  display: flex;
+  flex-wrap: wrap;
   gap: 16px;
   justify-content: center;
+  max-width: 1264px;
 `;
 
 export const ImagesItem = styled.li`
+  width: 240px;
   cursor: pointer;
   border-radius: 6px;
   overflow: hidden;

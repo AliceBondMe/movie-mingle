@@ -9,7 +9,9 @@ export const GlobalStyle = createGlobalStyle`
   --accent: ${({ $theme }) => ($theme === 'dark' ? '#094a44' : '#266861')};
   --additional: ${({ $theme }) => ($theme === 'dark' ? '#073e3a' : '#094a44')};
   --basic-white: #ffffff;
+  --basic-gray: #6f6f6f;
   --basic-transition: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
     body {

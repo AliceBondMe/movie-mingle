@@ -1,9 +1,9 @@
 import { Wrap } from './Logo.styled';
 import { TbMovie } from 'react-icons/tb';
 
-export const Logo = () => {
+export const Logo = ({ closeMobileMenu }) => {
   return (
-    <Wrap to="/">
+    <Wrap to="/" onClick={closeMobileMenu}>
       <TbMovie />
       MovieMingle
     </Wrap>

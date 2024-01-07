@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 
 export const Item = styled.li`
   position: relative;
+
+  @media screen and (max-width: 639px) {
+    font-size: 16px;
+  }
 `;
 
 export const CardLink = styled(Link)`
@@ -39,6 +43,10 @@ export const Image = styled.img`
 
 export const Title = styled.h3`
   text-align: center;
+
+  @media screen and (max-width: 639px) {
+    font-size: 20px;
+  }
 `;
 
 export const Rating = styled.div`

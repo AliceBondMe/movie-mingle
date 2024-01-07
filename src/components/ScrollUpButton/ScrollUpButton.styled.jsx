@@ -32,6 +32,11 @@ export const ScrollUpBtn = styled.button`
       transform: rotate(20deg);
     }
   }
+
+  @media screen and (max-width: 639px) {
+    right: 20px;
+    bottom: 32px;
+  }
 `;
 
 export const ArrowUp = styled(IoArrowUpCircleOutline)`

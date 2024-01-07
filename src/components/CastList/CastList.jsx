@@ -18,7 +18,7 @@ export const CastList = ({ castToRender }) => {
             />
           </PhotoWrap>
           <Name>{actor.name}</Name>
-          <Info>as {actor.character}</Info>
+          {actor.character && <Info>as {actor.character}</Info>}
         </Item>
       ))}
     </List>

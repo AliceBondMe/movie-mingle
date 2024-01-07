@@ -13,6 +13,10 @@ export const SearchForm = styled(Form)`
   border: 1px solid var(--basic-dark);
   border-radius: 3px;
   overflow: hidden;
+
+  @media screen and (max-width: 639px) {
+    margin: 0 auto 16px auto;
+  }
 `;
 
 export const SearchFormButton = styled.button`
@@ -35,12 +39,22 @@ export const SearchFormButton = styled.button`
     opacity: 0.3;
     cursor: not-allowed;
   }
+
+  @media screen and (max-width: 639px) {
+    width: 36px;
+    height: 36px;
+  }
 `;
 
 export const ButtonImg = styled(BsSearch)`
   width: 36px;
   height: 36px;
   color: var(--basic-dark);
+
+  @media screen and (max-width: 639px) {
+    width: 24px;
+    height: 24px;
+  }
 `;
 
 export const ButtonLabel = styled.span`
@@ -68,5 +82,13 @@ export const SearchInput = styled(Field)`
   &:placeholder {
     font: inherit;
     font-size: 18px;
+
+    @media screen and (max-width: 639px) {
+      font-size: 16px;
+    }
+  }
+
+  @media screen and (max-width: 639px) {
+    font-size: 16px;
   }
 `;

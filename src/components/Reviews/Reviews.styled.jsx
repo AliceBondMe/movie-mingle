@@ -3,6 +3,10 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: flex;
   justify-content: center;
+
+  @media screen and (max-width: 1279px) {
+    font-size: 14px;
+  }
 `;
 
 export const Item = styled.li`

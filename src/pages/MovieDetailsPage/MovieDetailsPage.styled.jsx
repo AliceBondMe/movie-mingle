@@ -3,6 +3,11 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   padding: 20px;
+
+  @media screen and (max-width: 639px) {
+    padding: 12px;
+    font-size: 16px;
+  }
 `;
 
 export const AdditionalNav = styled.div`
@@ -20,10 +25,20 @@ export const NavList = styled.ul`
   align-items: center;
   width: 100%;
   height: 32px;
-  background-color: var(--accent);
+  background: linear-gradient(
+    to right,
+    var(--basic-light) 0%,
+    var(--accent) 20%,
+    var(--accent) 80%,
+    var(--basic-light) 100%
+  );
   align-items: bottom;
   font-size: 20px;
   font-weight: bold;
+
+  @media screen and (max-width: 639px) {
+    font-size: 16px;
+  }
 `;
 
 export const NavLinkStyled = styled(NavLink)`
