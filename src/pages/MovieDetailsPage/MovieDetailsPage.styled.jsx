@@ -28,8 +28,8 @@ export const NavList = styled.ul`
   background: linear-gradient(
     to right,
     var(--basic-light) 0%,
-    var(--accent) 20%,
-    var(--accent) 80%,
+    var(--accent) 10%,
+    var(--accent) 90%,
     var(--basic-light) 100%
   );
   align-items: bottom;

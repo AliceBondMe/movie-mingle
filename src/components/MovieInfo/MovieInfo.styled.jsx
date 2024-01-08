@@ -50,7 +50,7 @@ export const Information = styled.div`
   }
 
   @media screen and (max-width: 639px) {
-    margin: 0 auto;
+    margin: 0 auto 12px auto;
     width: 100%;
   }
 `;
@@ -84,6 +84,7 @@ export const LineHeader = styled.span`
   font-weight: bold;
 
   @media screen and (max-width: 1279px) {
+    width: 70%;
     height: 24px;
   }
 

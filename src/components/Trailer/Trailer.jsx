@@ -3,7 +3,7 @@ import { YoutubeEmbed } from 'components/YouTubeEmbed/YouTubeEmbed';
 import { Error } from 'pages/HomePage/HomePage.styled';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { scrollToAdditionalMenu } from 'helpers/scrollToAdditionalMenu';
+import { scrollToAdditionalMenu } from 'helpers/scrollsToElements';
 import { fetchMoviesData } from 'services/tmdb-api';
 import { ErrorContainer } from './Trailer.styled';
 

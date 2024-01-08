@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { fetchMoviesData } from 'services/tmdb-api';
 import { CastList } from 'components/CastList/CastList';
 import { Button, Wrap } from './Cast.styled';
-import { scrollToAdditionalMenu } from 'helpers/scrollToAdditionalMenu';
+import { scrollToAdditionalMenu } from 'helpers/scrollsToElements';
 
 const Cast = () => {
   const { movieId } = useParams();

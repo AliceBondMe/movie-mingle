@@ -16,7 +16,7 @@ export const ScrollUpButton = () => {
 
   const scrollUp = () => {
     animateScroll.scrollToTop({
-      duration: 800,
+      duration: 1000,
       smooth: true,
     });
   };

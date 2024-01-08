@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { fetchMoviesData } from 'services/tmdb-api';
 import { Author, Container, Item, Url } from './Reviews.styled';
 import { IoPersonCircleSharp } from 'react-icons/io5';
-import { scrollToAdditionalMenu } from 'helpers/scrollToAdditionalMenu';
+import { scrollToAdditionalMenu } from 'helpers/scrollsToElements';
 
 const Reviews = () => {
   const { movieId } = useParams();

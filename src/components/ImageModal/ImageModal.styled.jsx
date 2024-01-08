@@ -28,7 +28,7 @@ export const CloseBtn = styled.button`
   align-items: center;
   justify-content: center;
   margin-left: auto;
-  margin-right: 16px;
+  margin-right: 8px;
   width: 40px;
   height: 40px;
   background-color: transparent;

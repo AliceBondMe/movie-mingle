@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const PageTitle = styled.h1`
+  max-width: 85%;
   text-align: center;
   color: var(--basic-white);
   font-size: 60px;

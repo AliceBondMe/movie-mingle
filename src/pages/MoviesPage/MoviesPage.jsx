@@ -6,6 +6,7 @@ import { useSearchParams } from 'react-router-dom';
 import { fetchMoviesData } from 'services/tmdb-api';
 import { Info, Wrap } from './MoviesPage.styled';
 import { Pagination } from '@mui/material';
+import { scrollMoviesPageStart } from 'helpers/scrollsToElements';
 
 const MoviesPage = () => {
   const [query, setQuery] = useState('');
@@ -66,6 +67,9 @@ const MoviesPage = () => {
           'We are sorry, but something went wrong :( Please, try again later'
         );
         setPagesToShow([]);
+      })
+      .finally(() => {
+        scrollMoviesPageStart();
       });
   }, [searchParams, query]);
 
@@ -77,7 +81,7 @@ const MoviesPage = () => {
 
   return (
     <Wrap>
-      <Info>
+      <Info name="moviesPageStart">
         Ready to explore the world of cinema? <br />
         Simply enter your movie query, and let the magic unfold!
       </Info>

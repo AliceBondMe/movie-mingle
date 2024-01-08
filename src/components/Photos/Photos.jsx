@@ -4,7 +4,7 @@ import { fetchMoviesData } from 'services/tmdb-api';
 import { Container, ImagesItem, ImagesList } from './Photos.styled';
 import { ImageModal } from 'components/ImageModal/ImageModal';
 import { Image } from 'components/ImageModal/ImageModal.styled';
-import { scrollToAdditionalMenu } from 'helpers/scrollToAdditionalMenu';
+import { scrollToAdditionalMenu } from 'helpers/scrollsToElements';
 import { Error } from 'pages/HomePage/HomePage.styled';
 
 const SMALL_IMAGE_PATH = 'https://image.tmdb.org/t/p/w300';
