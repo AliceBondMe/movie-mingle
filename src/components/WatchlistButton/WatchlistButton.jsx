@@ -13,7 +13,6 @@ export const WatchlistButton = ({ movieData }) => {
   const [isMovieSaved, setMovieSaved] = useState(false);
   const { watchlist, addMovieToWatchlist, removeMovieFromWatchlist } =
     useContext(WatchlistContext);
-  const [watchlistUsed, setWatchlistUsed] = useState(false);
 
   useEffect(() => {
     const isSaved = watchlist.find(({ id }) => id === movieData.id);
@@ -21,9 +20,11 @@ export const WatchlistButton = ({ movieData }) => {
   }, [movieData.id, watchlist]);
 
   useEffect(() => {
-    if (!watchlistUsed) return;
+    if (watchlist.length === 0) {
+      return;
+    }
     localStorage.setItem(MOVIES_KEY, JSON.stringify(watchlist));
-  }, [watchlist, watchlistUsed]);
+  }, [watchlist]);
 
   return (
     <>
@@ -41,7 +42,6 @@ export const WatchlistButton = ({ movieData }) => {
           aria-label="add to watchlist"
           onClick={() => {
             addMovieToWatchlist(movieData);
-            setWatchlistUsed(true);
           }}
         >
           <VideoPlus />

@@ -47,6 +47,9 @@ export const App = () => {
   };
 
   const removeMovieFromWatchlist = movieData => {
+    if (watchlist.length === 1) {
+      localStorage.removeItem(MOVIES_KEY);
+    }
     setWatchlist(prev => prev.filter(({ id }) => id !== movieData.id));
   };
 
